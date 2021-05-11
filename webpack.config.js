@@ -3,9 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {'js/app':['./src/App.jsx'],},
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath:"./",
-    filename: 'index.js'
+    path: path.resolve(__dirname, 'assets/'),
+    publicPath:'/',
   },
   module: {
     rules: [{

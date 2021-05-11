@@ -2,7 +2,6 @@
   "name": "open-quiz",
   "version": "1.0.0",
   "description": "クイズを解かせて正解率や速さの計測等をして、データを集めまるWebサイト。",
-  "main": "index.js",
   "scripts": {
     "start": "webpack-cli serve --mode development",
     "prebuild": "rimraf dist",
