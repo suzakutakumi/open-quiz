@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-function App(props) {
-    return (<center>{props.name}</center>)
+import 'whatwg-fetch'
+
+
+
+function App() {
+    let [status, setStatus] = useState("")
+    return (
+        <div>
+            <button onClick={() => {
+                fetch('/post', {
+                    method: 'POST'
+                }).then((res) => res.json()).then((resJson) => {
+                    setStatus(resJson.message)
+                })
+            }}>
+                push me!
+        </button>
+        <br/>
+            {status}
+        </div>
+    )
 }
-ReactDOM.render(<App name="test" />,document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
